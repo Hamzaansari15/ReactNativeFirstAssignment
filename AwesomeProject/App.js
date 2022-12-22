@@ -1,17 +1,28 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
 import { Login } from './assets/login';
 
 const App = () => {
- 
+
 
   return (
-    <Login />
-    // <View>
-    //   <Text>Hamza</Text>
-    // </View>
+    <>
+      <SafeAreaView style={styles.main}>
+        <Login />
+      </SafeAreaView>
+    </>
   );
 };
+
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#035efc'
+  }
+})
 
 
 
