@@ -1,13 +1,9 @@
 import React from "react";
-import { Text, Button, View, SafeAreaView, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, SafeAreaView, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 
 
-export const Login = () => {
+export const Login = (props) => {
 
-
-  const onPress = () => {
-    alert('hamza')
-  }
 
   return (
     <>
@@ -20,7 +16,7 @@ export const Login = () => {
           />
           <TextInput
             style={styles.input}
-            placeholder="Enter Email Here ..."
+            placeholder="Enter Password Here ..."
             keyboardType="default"
             secureTextEntry={true}
           />
@@ -29,6 +25,7 @@ export const Login = () => {
               <Text style={styles.buttonText}>Login</Text>
             </View>
           </TouchableOpacity>
+          <Text style={styles.signupLink}>I don't have an account?<Text onPress={props.signup} style={{ color: '#4070f4',fontSize: 16, fontWeight: 'bold' }}> Signup</Text></Text>
         </View>
       </SafeAreaView>
     </>
@@ -43,8 +40,8 @@ const styles = StyleSheet.create({
   },
   loginModal: {
     width: 340,
-    height: 280,
-    backgroundColor: '#fee',
+    height: 320,
+    backgroundColor: '#fff',
     borderRadius: 10,
     alignItems: 'center',
   },
@@ -53,11 +50,13 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: 'white',
     marginTop: 36,
-    borderRadius: 4,
-    padding: 12
+    borderRadius: 6,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: '#4070f4'
   },
   button: {
-    backgroundColor: '#035efc',
+    backgroundColor: '#4070f4',
     fontSize: 24,
     marginTop: 28,
     width: 100,
@@ -72,7 +71,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 2,
   },
-  text:{
+  text: {
     fontSize: 32
+  },
+  signupLink: {
+    marginTop: 20,
+    fontSize: 16
   }
 })
